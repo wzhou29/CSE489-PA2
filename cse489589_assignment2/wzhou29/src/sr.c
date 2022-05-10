@@ -53,26 +53,6 @@ void A_output(message)
     }
     NextSeqnum++;
   }
-  // if (idx == BufferSize) return;
-  // BufferPacket[idx].seqnum = NextSeqnum;
-  // int index = 0;
-  // while(index < FileSize && message.data[index]!='\0') {
-  //   BufferPacket[idx].payload[index] = message.data[index];
-  //   index++;
-  // }
-  // BufferPacket[idx].payload[index] = '\0';
-  // BufferPacket[idx].checksum = CheckSum(BufferPacket[idx]);
-  // SendTime[idx] = 0;
-  // idx++;
-  // if(SendBase == NextSeqnum){
-  //   tolayer3(0, BufferPacket[NextSeqnum]);
-  //   starttimer(0,25);
-  // }
-  // else if(NextSeqnum > SendBase && NextSeqnum < (SendBase+N)){
-  //   tolayer3(0, BufferPacket[NextSeqnum]);
-  //   SendTime[NextSeqnum] = get_sim_time();
-  // }
-  // NextSeqnum++;
 }
 
 /* called from layer 3, when a packet arrives for layer 4 */
@@ -95,21 +75,6 @@ void A_input(packet)
       A_ACK[SendBase] = 1;
     }
   }
-  // if(packet.acknum < SendBase) return;
-  // else if (packet.acknum == SendBase){
-  //   A_ACK[SendBase] = 1;
-  //   stoptimer(0);
-  //   int index = SendBase;
-  //   while(A_ACK[index]==0 && (index+N) < NextSeqnum && A_ACK[index+N]==0) {
-  //     tolayer3(0, BufferPacket[index+N]);
-  //     SendTime[index+N] = get_sim_time();
-  //     index++;
-  //   }
-  //   SendBase = index;
-  // }
-  // else if(packet.acknum > SendBase && packet.acknum < (SendBase+N)) {
-  //   A_ACK[SendBase] = 1;
-  // }
 }
 
 /* called when A's timer goes off */

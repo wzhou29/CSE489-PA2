@@ -31,10 +31,6 @@ void A_output(message)
   struct msg message;
 {
   if (idx != BufferSize){
-    // for (i=0;i<FileSize;i++){
-    //   if(message.data[i]=='\0') break;
-    //   BufferPacket[idx].payload[i]=message.data[i];
-    // }
     int index = 0;
     while(index < FileSize && message.data[index]!='\0') {
     BufferPacket[idx].payload[index] = message.data[index];

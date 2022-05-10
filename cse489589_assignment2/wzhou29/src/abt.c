@@ -76,24 +76,6 @@ void A_input(packet)
       }
 	  }
   }
-  // if(LastAcknum != packet.acknum && ASeqnum != packet.acknum) {
-	// 	starttimer(A, FileSize);
-	// 	tolayer3(A, LastPacket);
-	// }
-  // else{
-	// 	stoptimer(A);
-	// 	LastAcknum = packet.acknum;
-	// 	Status = true;
-
-	// 	if(Status && iterate<idx) {
-  //     LastPacket = BufferPacket[iterate];
-  //     ASeqnum = BufferPacket[iterate].seqnum;
-  //     Status = false;
-  //     starttimer(A,FileSize);
-  //     tolayer3(A,LastPacket);
-  //     iterate++;
-  //   }
-	// }
 }
 
 /* called when A's timer goes off */
